@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+// import $ from 'jquery'
 import toastr from 'toastr'
 import WaitLoading from './Loading'
 export default {
@@ -132,7 +132,8 @@ export default {
       }
     },
     openFileManager () {
-      $('#file-upload').trigger('click')
+      // $('#file-upload').trigger('click')
+      toastr.warning('Uploading is disabled on demo')
     },
     insertImage (image) {
       this.$parent.$emit('insert-image', image)
