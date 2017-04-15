@@ -14,7 +14,7 @@
           </a>
         </div>
         <p class="navbar-text navbar-right">
-          Vue Markdown Editor by <a href="https://github.com/franckysolo" class="navbar-link">Franck Matherat</a>
+          Vue Markdown Editor by <a href="https://github.com/franckysolo/vue-md-editor" class="navbar-link">Franck Matherat</a>
         </p>
       </div><!-- /.container-fluid -->
     </nav>
