@@ -164,6 +164,11 @@ export default {
 </script>
 
 <style lang="less">
+#images-container {
+  .caption{
+    padding: 3px 0 0 0;
+  }
+}
 .modal-mask {
  position: fixed;
  z-index: 9998;

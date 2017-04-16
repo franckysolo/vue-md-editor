@@ -169,9 +169,6 @@ export default {
       let text = el.input.val()
       let before = text.substring(0, start)
       let after = text.substring(end, text.length)
-      console.log(before)
-      console.log(after)
-      console.log(before + value + after)
       el.input.val(before + value + after)
       if (el.text === '') {
         let pattern = /(hr|list|listnum|table|cite|img)/
@@ -203,12 +200,12 @@ export default {
         case 'img': return this.mdImage(value, label)
         case 'cite': return '> Citation : ' + this.crlf + value
         case 'code': return this.mdCode(value)
-        case 'h1': return '# ' + value + this.crlf
-        case 'h2': return '## ' + value + this.crlf
-        case 'h3': return '### ' + value + this.crlf
-        case 'h4': return '#### ' + value + this.crlf
-        case 'h5': return '##### ' + value + this.crlf
-        case 'h6': return '###### ' + value + this.crlf
+        case 'h1': return this.createTitle(1, value)
+        case 'h2': return this.createTitle(2, value)
+        case 'h3': return this.createTitle(3, value)
+        case 'h4': return this.createTitle(4, value)
+        case 'h5': return this.createTitle(5, value)
+        case 'h6': return this.createTitle(6, value)
         default: return ''
       }
     },
@@ -221,6 +218,13 @@ export default {
         let label = isDefault ? 'Item ' + index : items[i]
         string += numeric ? `${index}. ${label}` : `* ${label}`
         string += this.crlf
+      }
+      return string + ' ' + this.crlf
+    },
+    createTitle (index, value) {
+      let string = '#'.repeat(index) + ' '
+      if (value !== '') {
+        string += value + ' ' + this.crlf
       }
       return string
     },
